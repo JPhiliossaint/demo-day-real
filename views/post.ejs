@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Precedent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./../public/css/secondstyle.css">
+</head>
+
+<body>
+  <style>
+    body{
+        background-color: rgb(167, 194, 220);
+    }
+</style>
+  <div class="container">
+    <div class="page-header text-center">
+      <img src="/images/otherotherlogo.png" width="250" height="250"><br>
+    <div class="page-header text-center">
+  
+      <a href="/feed" <button type="button" class="btn btn-outline-success">Feed</button></a>
+      <a href="/logout" <button type="button" class="btn btn-outline-dark">Logout</button></a>
+    </div>
+    </div>
+
+    <div class="">
+      <div class="container card text-white bg-dark mb-3 ard border-success mb-3">
+        <div class="card-header"><h3>Event</h3></div>
+        <form method="post">
+       
+          <ul class="messages list-unstyled">
+              <li class="message">
+   <h1><%=posts[0].newEvent%></h1>
+   <h3><%=posts[0].eventDate%>"</h3>
+    <h2> Description: </h2>
+   <h3><%=posts[0].description%></h3>
+   
+              </li>
+          </ul>
+          </form>
+        <form action="/post/<%= posts[0]._id%>/register" method="post">
+          <button class="registerbtn btn-lg btn-outline-success"><%= registered ? "Unregister" : "Register" %></button>
+        </form>
+        </div>
+      </div>
+      <div class="row">
+      <div class="text-center"><h2>Attendee List</h2></div>
+      <!-- <% for (let attendee of posts[0].registeredUsers) { %>
+        <li class="message">
+          <h4>
+            <%= attendee.local.firstName + " " + attendee.local.lastName + " " + attendee.local.pronouns%>
+          </h4>
+        <% } %> -->
+
+
+        <ul class="accordion accordion-flush" id="accordionFlushExample">
+              <% for (let attendee of posts[0].registeredUsers) { %>
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <%= attendee.local.firstName + " " + attendee.local.lastName + " Pronouns:" + attendee.local.pronouns%>
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
+                <div class="accordion-body">
+                 GamerTag: <%= attendee.local.gamerTag %> <br>
+                   Bio: <%= attendee.local.bio %>
+                </div>
+              </div>
+                </div>
+              </div>
+            </li>
+            <% } %>
+        </ul>
+        <div class="text-center">
+          <h4>Leave A Note</h4>
+          <form action="/post/<%= posts[0]._id%>/comment" method="post">
+            <textarea id="eventComment" name="eventComment" rows="4" cols="50"></textarea><br>
+            <button type="submit" class="btn-lg btn-success ">submit</button>
+          </form>
+        </div>
+  <br>
+  <ul class="messages list-unstyled">
+          <% for(var i=0; i<comments.length; i++) {%>
+            <li class="messages list-unstyled">
+              <h4>
+                <%= comments[i].eventComment %>
+              </h4>
+            </li>
+            <% } %>
+        </ul>
+      <script src="main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+</body>
+
+</html>

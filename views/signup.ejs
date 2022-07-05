@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Precedent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../public/css/style.css">
+    <link rel="stylesheet" href="./../public/css/secondstyle.css">
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(33, 37, 41);
+        }
+    </style>
+<div class="row text-center card mb-3 text-white bg-dark my-3">
+<div class="col-md-4 mx-auto">
+
+    <h1 class=""><span class="fa fa-sign-in"></span> Register</h1>
+
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/signup" method="post">
+        <div class="form-group signupForm">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstName">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastName">
+            <label>GamerTag</label>
+            <input type="text" class="form-control" name="gamerTag">
+            <label for="bio">Short Bio</label><br>
+            <textarea id="bio" name="bio" placeholder="Tell us about yourself!" rows="4" cols="50"></textarea><br>
+            <label for="cars">What Pronouns Do You Identify With?</label>
+            <select id="pronouns" name="pronouns">
+                <option value="He/Him/His">He/Him/His</option>
+                <option value="She/Her/Hers">She/Her/Hers</option>
+                <option value="They/them">They/them</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div><br>
+
+        <button type="submit" class="btn btn-success btn-lg">Sign up</button>
+    </form>
+
+    <hr>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <p>Or go <a href="/">home</a>.</p>
+
+</div>
+</div>
+</body>
+</html>

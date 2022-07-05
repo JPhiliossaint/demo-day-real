@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Precedence</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./../public/css/secondstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body >
+  <style>
+    .list-group {
+      display: inline;
+    }
+    
+  </style>
+      <style>
+        body{
+            background-color: rgb(167, 194, 220);
+        }
+    </style>
+  <div class="container " >
+
+    <div class="page-header text-center ">
+    <img src="images/otherotherlogo.png" width="250" height="250"><br>
+      <a href="/logout" <button type="button" class="btn btn-outline-dark">Logout</button></a>
+    </div>
+
+    <!-- <div class="row">
+
+       
+        <div class="col-sm-6">
+          <h3>Events</h3>
+          <a href="/newEvent">Create New</a>
+          <ul class="messages">
+          <% for(var i=0; i<posts.length; i++) { %>
+            <li class="message">
+              <% let endpoint = user._id === posts[i].postedBy ? "edit" : "post" %>
+
+                <a href="/post/<%= posts[i]._id %>">
+                  <h4><%= posts[i].newEvent %></h4>
+                  <img src="<%= posts[i].img %>" alt="">
+            
+                </a>  
+              
+            </li>
+          <% } %>
+          </ul>
+</div> -->
+    <div class="container">
+      <h2>Event Feed</h2>
+      <a href="/newEvent"><button class="btn btn-primary">Create New Event</button></a>
+      <ul class="locations list-group list-group-horizontal gap-3">
+        <% for(var i=0; i<posts.length; i++) { %>
+          <li class="message list-group shadow-lg my-3">
+            <% let endpoint=user._id===posts[i].postedBy ? "edit" : "post" %>
+              <div class="card border-warning mb-3 text-white bg-dark ">
+                <div class="card-body ">
+                  <h2 class="card-title">
+                    <%= posts[i].newEvent %>
+                  </h2>
+                  <p class="card-text">
+                    <%= posts[i].eventDate %>
+                  </p>
+                  <a href="/post/<%= posts[i]._id %>"><button type="button" class="btn btn-success">View Event
+                      Details</button></a>
+                </div>
+              </div>
+          </li>
+          <% } %>
+      </ul>
+      <script src="main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

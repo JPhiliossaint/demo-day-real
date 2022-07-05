@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,400italic,700,900%7CPlayfair+Display:700italic,900">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="preloader">
+      <div><a class="brand brand-md" href="index.ejs"><img src="images/logo-inverse-139x22.svg" alt="" width="139" height="22"/></a>
+        <div class="page-loader-body">
+          <div id="spinningSquaresG">
+            <div class="spinningSquaresG" id="spinningSquaresG_1"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_2"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_3"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_4"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_5"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_6"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_7"></div>
+            <div class="spinningSquaresG" id="spinningSquaresG_8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <section class="section section-single novi-background bg-gray-darker" style="background-image: url(images/bg-login.jpg);">
+        <div class="section-single-inner">
+          <header class="section-single-header">
+            <div class="divider-spectrum"></div>
+            <div class="container"><a class="brand brand-md" href="index.ejs"><img src="images/logo-inverse-139x22.svg" alt="" width="139" height="22"/></a></div>
+          </header>
+          <section class="section-single-main">
+            <div class="container">
+              <div class="row justify-content-md-center">
+                <div class="col-md-7 col-lg-5 col-xl-4">
+                  <div class="block-shadow">
+                    <div class="block-inner">
+                      <p class="h7">Login to your account</p><span class="novi-icon icon icon-xl icon-black material-icons-lock_open block-icon"></span>
+                    </div>
+                    <form class="rd-mailform form-modern form-darker form-disabled" action="/login" method="post">
+                      <div class="block-inner">
+                        <div class="form-wrap">
+                          <input class="form-input" id="login-form-login" type="text" name="email">
+                          <label class="form-label" for="login-form-login">Login</label>
+                        </div>
+                        <div class="form-wrap">
+                          <input class="form-input" id="login-form-password" type="password" name="password" data-constraints="@Required">
+                          <label class="form-label" for="login-form-password">Password</label>
+                        </div>
+                        <div class="form-wrap"><a class="link-default" href="#">Forgot your password?</a></div>
+                      </div>
+                      <button class="btn btn-primary btn-round-bottom btn-block" type="submit">Sign in</button>
+                    </form>
+                  </div>
+                  <div class="group-inline text-center"><span>Haven’t an account?</span><a class="link link-primary-1" href="signup.ejs">Sign up here.</a></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="section-single-footer">
+            <div class="container">
+              <p class="rights"><span>Starbis</span><span>&nbsp;&#169;&nbsp;</span><span class="copyright-year"></span><span>All Rights Reserved</span><br class="d-md-none"><a class="link-primary-inverse" href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+            <div class="divider-spectrum"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

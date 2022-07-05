@@ -1,0 +1,13 @@
+.signupForm{
+  color: red;
+}
+.container{
+  text-decoration: none;
+}
+body{
+  font-family: 'Bangers', cursive;
+}
+.accordion-button.collapsed {
+  color: rgb(18, 189, 38);
+  background: rgb(22, 184, 106);
+}
