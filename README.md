@@ -8,7 +8,7 @@
 1. run `node server.js`
 2. Navigate to `localhost:8080`
 
-# Precedent : <a href = "https://glamorous-nightgown-lamb.cyclic.app/feed">Visit Here</a>
+# Precedent : <a href = "https://glamorous-nightgown-lamb.cyclic.app">Visit Here</a>
 
 ![644f0ed46ba68ec8d67d9971941955f8](https://user-images.githubusercontent.com/102938926/177256096-f304f013-7242-400e-a5c1-951b8e577cac.gif)
 
